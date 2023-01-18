@@ -10,9 +10,8 @@ let connection = mysql.createConnection({
   password: process.env.password,
   database: process.env.database,
   root: process.env.root,
-//   port: process.env.dbport
+  //   port: process.env.dbport
 });
-
 // after that, I'm going to query the connection just to make sure we are connected on app startup
 
 connection.query("select now()", function (err, results) {
@@ -23,4 +22,4 @@ connection.query("select now()", function (err, results) {
   }
 });
 
-module.exports = connection;
+module.exports = { connection };
